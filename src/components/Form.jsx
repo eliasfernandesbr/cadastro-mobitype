@@ -1,7 +1,8 @@
 import React from "react";
 
-export default function Form({ user, setUser }) {
+export default function Form({ user, setUser, createUser }) {
   const { name, email, birthdate } = user;
+
   return (
     <form>
       <div className="input-box">
@@ -28,7 +29,9 @@ export default function Form({ user, setUser }) {
           onChange={(e) => setUser({ ...user, birthdate: e.target.value })}
         />
       </div>
-      <button>Cadastrar</button>
+      <button type="button" onClick={createUser}>
+        Cadastrar
+      </button>
     </form>
   );
 }
