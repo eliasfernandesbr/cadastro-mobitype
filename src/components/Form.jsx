@@ -1,10 +1,16 @@
 import React from "react";
 
-export default function Form({ user, setUser, createUser, message }) {
+export default function Form({
+  user,
+  setUser,
+  createUser,
+  message,
+  messageClass,
+}) {
   const { name, email, birthdate } = user;
 
   return (
-    <form>
+    <form className="users-form">
       <div className="input-box">
         <label htmlFor="name">Nome</label>
         <input
@@ -32,7 +38,7 @@ export default function Form({ user, setUser, createUser, message }) {
       <button type="button" onClick={createUser}>
         Cadastrar
       </button>
-      <p>{message}</p>
+      <p className={`${messageClass}`}>{message}</p>
     </form>
   );
 }
