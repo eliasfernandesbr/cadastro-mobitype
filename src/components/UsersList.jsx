@@ -2,7 +2,7 @@ import React from "react";
 
 export default function UsersList({ users, deleteUser }) {
   return (
-    <div>
+    <div className="users-list">
       {users.length ? (
         <table>
           <thead>
@@ -18,7 +18,9 @@ export default function UsersList({ users, deleteUser }) {
                 <td>{user.email}</td>
                 <td>{user.birthdate}</td>
                 <td>
-                  <button onClick={() => deleteUser(user.id)}>Deletar</button>
+                  <button onClick={() => deleteUser(user.id)}>
+                    <i class="fas fa-trash"></i>
+                  </button>
                 </td>
               </tr>
             ))}

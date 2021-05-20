@@ -23,7 +23,7 @@ body {
 .users-form {
   background-color: rgba(49, 49, 49, 0.856);
   width: 32rem;
-  margin: 2rem auto;
+  margin: 2rem auto 4rem auto;
   border-radius: 5px;
   box-shadow: 0 10px 15px #00000033;
   padding: 3rem 2rem 1rem 2rem;
@@ -60,6 +60,7 @@ body {
   background-color: royalblue;
   color: #fff;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 .success-msg,
@@ -72,4 +73,37 @@ body {
 
 .error-msg {
   color: #ff7605;
+}
+
+.users-list table {
+  background-color: #fff;
+  width: 75rem;
+  margin: 0 auto 4rem auto;
+  border-collapse: collapse;
+  padding: 1rem 0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px #00000033;
+}
+
+.users-list th {
+  padding: 1rem 0;
+  background-color: #333;
+  color: #fff;
+}
+
+.users-list table tr:nth-child(even) {
+  background-color: #ddd;
+
+  display: table-row;
+}
+
+td {
+  padding: 1rem 1.5rem;
+}
+
+td button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
