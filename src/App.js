@@ -12,12 +12,19 @@ function App() {
   const [messageClass, setMessageClass] = useState("");
 
   const createUser = async () => {
+    setMessage("");
+    if (!user.name.trim() || !user.email.trim() || !user.birthdate.trim()) {
+      setMessage("Preencha todos os campos.");
+      setMessageClass("error-msg");
+      return;
+    }
     const res = await axios.post(
       "https://60a5a36fc0c1fd00175f419a.mockapi.io/users",
       user
     );
     if (res.status === 201) {
       setUser({ name: "", email: "", birthdate: "" });
+      getUsers();
       setMessage("Usuário cadastrado com sucesso!");
       setMessageClass("success-msg");
     } else {
@@ -33,6 +40,7 @@ function App() {
 
     console.log(data);
     setUsers(data);
+    console.log("geting users", users);
   };
 
   useEffect(() => {

@@ -19,7 +19,7 @@ export default function UsersList({ users, deleteUser }) {
                 <td>{user.birthdate}</td>
                 <td>
                   <button onClick={() => deleteUser(user.id)}>
-                    <i class="fas fa-trash"></i>
+                    <i className="fas fa-trash"></i>
                   </button>
                 </td>
               </tr>
@@ -27,7 +27,7 @@ export default function UsersList({ users, deleteUser }) {
           </tbody>
         </table>
       ) : (
-        <p>Nenhum usuário cadastrado.</p>
+        <p className="no-users-msg">Nenhum usuário cadastrado.</p>
       )}
     </div>
   );

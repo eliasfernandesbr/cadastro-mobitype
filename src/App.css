@@ -107,3 +107,7 @@ td button {
   background-color: transparent;
   cursor: pointer;
 }
+
+.no-users-msg {
+  text-align: center;
+}
