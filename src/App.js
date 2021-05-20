@@ -2,9 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
+import UsersList from "./components/UsersList";
 
 function App() {
   const [user, setUser] = useState({ name: "", email: "", birthdate: "" });
+  const [users, setUsers] = useState([]);
 
   const createUser = async () => {
     const { data } = await axios.post(
@@ -17,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Form user={user} setUser={setUser} createUser={createUser} />
+      <UsersList users={users} />
     </div>
   );
 }
