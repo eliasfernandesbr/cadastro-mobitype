@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Form({ user, setUser, createUser }) {
+export default function Form({ user, setUser, createUser, message }) {
   const { name, email, birthdate } = user;
 
   return (
@@ -32,6 +32,7 @@ export default function Form({ user, setUser, createUser }) {
       <button type="button" onClick={createUser}>
         Cadastrar
       </button>
+      <p>{message}</p>
     </form>
   );
 }

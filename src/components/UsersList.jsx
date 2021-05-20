@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UsersList({ users }) {
+export default function UsersList({ users, deleteUser }) {
   return (
     <div>
       {users.length ? (
@@ -9,6 +9,7 @@ export default function UsersList({ users }) {
             <th>Nome</th>
             <th>Email</th>
             <th>Aniversário</th>
+            <th></th>
           </thead>
           <tbody>
             {users.map((user) => (
@@ -16,6 +17,9 @@ export default function UsersList({ users }) {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.birthdate}</td>
+                <td>
+                  <button onClick={() => deleteUser(user.id)}>Deletar</button>
+                </td>
               </tr>
             ))}
           </tbody>
